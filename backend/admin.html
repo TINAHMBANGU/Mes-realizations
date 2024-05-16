@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <title>Admin</title>
+    <style>
+        
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        td, th{
+            border:1px solid rgb(190, 189, 189);
+            text-align: left;
+            padding: 8px;
+        }
+        
+        th{
+            background-color: rgb(243, 243, 10);
+        }
+        
+        td{
+            background-color: rgb(212, 207, 207);
+        }
+
+        input{
+            width: 9%;
+            padding: 2px;
+        }
+
+        button{
+            background-color: rgb(18, 18, 146);
+            color: white;
+            padding: 5px;
+            margin-bottom: 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(13, 13, 109);
+        }
+
+        .create_admin, .update_admin,
+        .create_client, .update_client,
+        .create_depart, .update_depart{
+            display: none;
+        }
+
+      
+    </style>
+    <body>
+        <div class="container">
+            <div class="container_data">
+                <h2>Clients</h2>
+                <table>
+                 <thead>
+                     <th>ID</th>
+                     <th>Fullname</th>
+                     <th>Phone number</th>
+                     <th>email</th>
+                     <th>Address</th>
+                     <th>D.O.B</th>
+                     <th>Date of Creation</th>
+                     <th>Gender</th>
+                     <th>Password</th>
+                     
+                 </thead>
+                    <tbody class="client_data">
+            
+                    </tbody>
+               </table>
+              <form class="create_client">
+                <input id="name3" type="text" placeholder="Enter Fullname" class="fullname">
+                <input id="num3" type="text" placeholder="Enter Phone_number" class="phone_number">
+                <input id="email3" type="email" placeholder="Enter email" class="email">
+                <input id="address3" type="text" placeholder="Enter Address" class="address">
+                <input id="dob3" type="date" placeholder="Enter D.O.B" class="d.o.b">
+                <input id="doc3" type="date" placeholder="Enter D.O.C" class="d.o.c">
+                <input id="gender3" type="text" placeholder="Enter Gender" class="gender">
+                <input id="password3" type="password" placeholder="Enter Password" class="password">
+                <button  type="button" onclick="addclient()">Create</button>
+              </form>
+              <form class="update_client">
+                <input type="text" class="" id="clientid" hidden>
+                <input id="name2" type="text" placeholder="Enter Fullname" class=ufullname>
+                <input id="num2" type="text" placeholder="Enter Phone_number" class="uphone_number">
+                <input id="email2r" type="email" placeholder="Enter email" class="uemail">
+                <input id="address2r" type="text" placeholder="Enter Address" class="uaddress">
+                <input id="dob2r" type="text" placeholder="Enter D.O.B" class="ud_o_b">
+                <input id="doc2r" type="text" placeholder="Enter D.O.C" class="ud_o_c">
+                <input id="gender2r" type="text" placeholder="Enter Gender" class="ugender">
+                <input id="password2r" type="password" placeholder="Enter Password" class="upassword">
+                <button type="button" onclick="updateclient()">Update</button>
+              </form>
+                <button class="addbtnclient" onclick="createFormclient()">Add +</button>
+            </div>
+        </div>
+        <!---end of table client-->
+
+
+        <!--start of table admin-->
+        <div class="container">
+            <div class="container_data">
+                <h2>Admin</h2>
+                <table>
+                    <thead>
+                       <th>ID</th>
+                       <th>ID_Department</th>
+                       <th>Fullname</th>
+                       <th>Phone number</th>
+                       <th>email</th>
+                       <th>Address</th>
+                       <th>D.O.B</th>
+                       <th>Date of Creation</th>
+                       <th>Gender</th>
+                       <th>Password</th>
+                    </thead>
+                    <tbody class="admin_data">
+                      
+                    </tbody>
+                </table>
+                <form class="create_admin">
+                    <input id="ndepartmnt1" type="text" placeholder="Enter ID_depart" class=ndepartmnt>
+                    <input id="nfullname1" type="text" placeholder="Enter Fullname" class=nfullname>
+                    <input id="nphone_number1" type="text" placeholder="Enter Phone_number" class="nphone_number">
+                    <input id="nemail1" type="" placeholder="Enter email" class="nemail">
+                    <input id="naddress1" type="text" placeholder="Enter Address" class="naddress">
+                    <input id="ndob1" type="date" placeholder="Enter D.O.B" class="ndob2">
+                    <input id="ndoc1" type="date" placeholder="Enter D.O.C" class="ndoc2">
+                    <input id="ngender1" type="text" placeholder="Enter Gender" class="ngender">
+                    <input id="npassword1" type="password" placeholder="Enter Password" class="npassword">
+                    <button  type="button" onclick="addadmin()">Create</button>
+                  </form>
+                  <form class="update_admin">
+                    <input type="text" class="" id="adminid" hidden>
+                    <input id="idepartmnt2" type="text" placeholder="Enter ID_depart" class=idepartmnt>
+                    <input id="ifullname2" type="text" placeholder="Enter Fullname" class=ifullname>
+                    <input id="iphone_number2" type="text" placeholder="Enter Phone_number" class="iphone_number">
+                    <input id="iemail2" type="" placeholder="Enter email" class="iemail">
+                    <input id="iaddress2" type="text" placeholder="Enter Address" class="iaddress">
+                    <input id="idob2" type="text" placeholder="Enter D.O.B" class="id_o_b">
+                    <input id="idoc2" type="text" placeholder="Enter D.O.C" class="id_o_c">
+                    <input id="igender2" type="text" placeholder="Enter Gender" class="igender">
+                    <input id="ipassword2" type="password" placeholder="Enter Password" class="ipassword">
+                    <button type="button" onclick="updateadmin()">Update</button>
+                  </form>
+                    <button class="addbtnadmin" onclick="createFormadmin()">Add +</button>
+          
+            </div>
+        </div>
+      <!---end of table admin-->
+
+
+      <!---start of table department-->
+        <div class="container">
+            <div class="container_data">
+                <h2>ID_Department</h2>
+                <table>
+                   <thead>
+                      <th>ID</th>
+                      <th>Name_Department</th>
+                      <th>Date of Creation</th>
+                   </thead>
+                   <tbody class="depart_data">
+          
+                   </tbody>
+                </table>
+                <form class="create_depart">
+                    <input id='undepart1r' type="text" placeholder="Enter department" class="undepart">
+                    <input id='undoc1r' type="date" placeholder="Enter D.O.C" class="undoc">
+                    <button type="button" onclick="adddepart()">Create</button>
+                </form>
+                <form class="update_depart">
+                    <input type="text" class="" id="departid" hidden>
+                    <input id='edepart1' type="text" placeholder="Enter department" class="edepart">
+                    <input id='edoc1' type="text" placeholder="Enter D.O.C" class="edoc">
+                    <button type="button" onclick="updatedepart()">Update</button>
+                </form>
+                    <button class="addbtndepart" onclick="createFormdepart()">Add +</button>
+            </div>
+        </div>
+      
+       <script src="js/client.js"></script>
+       <script src="js/admin.js"></script>
+       <script src="js/department.js"></script>
+    </body>
+</html>
